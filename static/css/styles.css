@@ -1,0 +1,67 @@
+/* Custom styles for Guided Meditation App */
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Breathing animation for meditation */
+@keyframes breathe {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+
+.loading-animation div {
+    animation: breathe 5s infinite ease-in-out;
+}
+
+/* Hover effects for cards */
+.card {
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--fallback-b2, oklch(var(--b2)));
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--fallback-p, oklch(var(--p)));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fallback-pf, oklch(var(--pf)));
+} 
