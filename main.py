@@ -101,5 +101,5 @@ async def get_meditation(meditation_type: str):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 if __name__ == "__main__":
-    print(colored("Starting Guided Meditation App server...", "cyan"))
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True) 
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
